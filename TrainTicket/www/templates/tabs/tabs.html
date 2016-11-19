@@ -1,0 +1,50 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left"  expose-aside-when="(min-width:500px)" width="200">
+    <ion-header-bar ng-show="false">
+
+    </ion-header-bar>
+    <ion-content style="background-color: #333333">
+      <div style="height:180px";align="center" >
+        <!--头像和账号的基本信息-->
+        <div>
+          <!--主页面的链接 也是到个人中心界面-->
+          <a menu-close href="#/tab/Personal">
+            <img src={{avatar}} style="margin-left: 20px;margin-top:20px;width: 120px;height:120px;border-radius:60px 60px 60px 60px;text-align: center" ng-click = "selectThird()" >
+          </a>
+        </div>
+        <div style="height: 30px; width: 120px; margin-left: 20px;text-align: center;">
+          <p><font color="white" size="3px" >{{username}}</font></p>
+        </div>
+        </div>
+        <ion-list class="icon-left" style="background-color: #333333">
+          <ion-item menu-close class ="item-dark" href="#/tab/BookTicket" ng-style="firstStyle"  ng-click="selectFirst()">
+            <i class="icon ion-settings"></i>
+            <font color="white">车票预订</font>
+          </ion-item>
+          <ion-item menu-close href="#/tab/Order" class ="item-dark" ng-style="secondStyle"  ng-click="selectSecond()">
+            <font color="white">
+              <i class="icon ion-briefcase"></i>
+            历史订单</font>
+
+          </ion-item>
+          <ion-item menu-close href="#/tab/Personal" class ="item-dark" ng-style="thirdStyle"  ng-click="selectThird()">
+            <i class="icon ion-person"></i>
+            <font color="white">个人中心</font>
+          </ion-item>
+
+        </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

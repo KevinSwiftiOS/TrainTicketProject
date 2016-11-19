@@ -24,62 +24,100 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-
-  // setup an abstract state for the tabs directive
+  //setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+      cache:false,
+    templateUrl: 'templates/tabs/tabs.html',
+     controller:"TabsCtrl"
   })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
+    // Each tab has its own nav history stack:
+  //3个tab
+  .state('tab.BookTicket', {
+    url: '/BookTicket',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'menuContent': {
+        templateUrl: 'templates/tabs/BookTicket.html',
+        controller: 'BookTicketCtrl'
       }
     }
   })
+    .state('tab.Order', {
+      url: '/Order',
 
-  .state('tab.chats', {
-      url: '/chats',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'menuContent': {
+          templateUrl: 'templates/tabs/Order.html',
+          controller: 'OrderCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    .state('tab.Personal', {
+      url: '/Personal',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'menuContent': {
+          templateUrl: 'templates/tabs/Personal.html',
+          controller: 'PersonalCtrl'
         }
       }
     })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+  //第四个模块 个人中心模块的修改密码界面
+  .state('tab.Personal-ResetPassword',{
+    url:'/Personal/ResetPassword',
+    views:{
+      'menuContent': {
+        templateUrl: 'templates/Personal/ResetPassword.html',
+        controller: 'PersonalResetPasswordCtrl',
       }
     }
-  });
+
+  })
+  //注册登录页面
+    .state('Login',{
+      url:'/Login',
+      templateUrl:'templates/LoginAndReset/Login.html',
+      controller:'LoginCtrl',
+
+
+    })
+    //忘记密码填写邮箱
+    .state('WriteEmail',{
+      url:'/WriteEmail',
+      templateUrl:'templates/LoginAndReset/WriteEmail.html',
+      controller:'LoginWriteEmailCtrl',
+
+
+    })
+    //发送验证码的
+    .state('SendIdentity',{
+      url:'/SendIdentity',
+      templateUrl:'templates/LoginAndReset/SendIdentity.html',
+      controller:'SendIdentityCtrl',
+
+
+    })
+    //重置密码
+    .state('ResetPassword',{
+      url:'/ResetPassword',
+      templateUrl:'templates/LoginAndReset/ResetPassword.html',
+      controller:'ResetPsswordCtrl',
+
+
+    })
+  //注册
+    .state('Register',{
+      url:'/Register',
+      templateUrl:'templates/LoginAndReset/Register.html',
+      controller:'RegisterCtrl',
+    })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/Login');
 
 });

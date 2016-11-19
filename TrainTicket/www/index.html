@@ -18,14 +18,17 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+    <link href="lib/sweetalert/dist/sweetalert.css" rel="stylesheet">
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
     <!-- ionic/angularjs js -->
+    <!--加载弹出框的显示-->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+    <script src="lib/sweetalert/dist/sweetalert.min.js"></script>
+    <!--加载动画的-->
+  <script src = "lib/ngCordova/dist/ng-cordova.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -38,7 +41,7 @@
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar class="bar-stable">
+    <ion-nav-bar class="bar-positive">
       <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
@@ -48,5 +51,19 @@
       have templates inline in this html file if you'd like).
     -->
     <ion-nav-view></ion-nav-view>
+    <!--4个tab键的使用-->
+    <script src = "js/controllers/tab/TabsCtrl.js"></script>
+    <script src = "js/controllers/tab/BookTicketCtrl.js"></script>
+    <script src = "js/controllers/tab/OrderCtrl.js"></script>
+    <script src = "js/controllers/tab/PersonalCtrl.js"></script>
+
+    <!--个人中心模块的-->
+    <script src = "js/controllers/Personal/ResetPasswordCtrl.js"></script>
+    <!--登录模块的-->
+    <script src = "js/controllers/LoginAndReset/LoginCtrl.js"></script>
+    <script src = "js/controllers/LoginAndReset/WriteEmailCtrl.js"></script>
+    <script src = "js/controllers/LoginAndReset/SendIdentityCtrl.js"></script>
+    <script src = "js/controllers/LoginAndReset/ResetPasswordCtrl.js"></script>
+   <script src = "js/controllers/LoginAndReset/RegisterCtrl.js"></script>
   </body>
 </html>
