@@ -116,8 +116,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       templateUrl:'templates/LoginAndReset/Register.html',
       controller:'RegisterCtrl',
     })
+  //第二个模块 订单列表页面
+    .state('tab.Order-Orderlist',{
+      url:'/Order/OrderList',
+      params:{title:null},
+      views:{
+        'menuContent': {
+          templateUrl: 'templates/Order/OrderList.html',
+          controller: 'OrderListCtrl',
+        }
+      }
 
+    })
+//第二个模块 订单列表的详细页面
+    .state('tab.Order-OrderDetail',{
+      url:'/Order/OrderDetail',
+
+      views:{
+        'menuContent': {
+          templateUrl: 'templates/Order/OrderDetail.html',
+          controller: 'OrderDetailCtrl',
+        }
+      }
+
+    })
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/Login');
+  $urlRouterProvider.otherwise('/tab/BookTicket');
 
 });

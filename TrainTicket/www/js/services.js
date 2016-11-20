@@ -12,3 +12,9 @@ service.factory('httpPost',function ($http) {
     }
   }
 });
+//头像的路径
+service.factory("img",function () {
+return {
+  src:null
+}
+})

@@ -1,3 +1,36 @@
-<ion-view title="历史订单">
-
+<ion-view title="订单查询">
+  <ion-header-bar>
+    <div class="tabs-striped tabs-top">
+      <div class="tabs">
+        <a ng-class="doneTab" ng-click="hasDone()">
+          已完成订单
+        </a>
+        <a ng-class="noDoneTab" ng-click="noDone()">
+          未完成订单
+          </a>
+      </div>
+      </div>
+  </ion-header-bar>
+  <ion-content>
+<div class="content has-header">
+  <p style="margin-top: 10px;margin-left: 5px">{{date}}</p>
+  <div class="list">
+    <div class="item item-icon-right" ng-click="goToOrderList('今日订单')">
+      <p>今日订单</p>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+      </div>
+    <div class="item item-icon-right" ng-click="goToOrderList('未完成订单')">
+      <p>未完成订单</p>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </div>
+    <div class="item item-icon-right" ng-click="goToOrderList('历史订单')">
+      <p>历史订单</p>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </div>
+    </div>
+  <p>
+    温馨提示等等
+  </p>
+  </div>
+  </ion-content>
 </ion-view>

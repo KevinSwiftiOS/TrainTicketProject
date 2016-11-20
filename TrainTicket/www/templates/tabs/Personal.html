@@ -8,7 +8,7 @@
     <div style="background-color: #0c60ee;height:150px ";align="center" >
       <!--头像的基本信息-->
       <div  style="background-color: #0c60ee" align=center>
-        <img src={{avatar}} style="margin-top:20px;width: 100px;height:100px;border-radius:50px 50px 50px 50px;text-align: center;" ng-click="selectHead()">
+        <img src={{img.src}} style="margin-top:20px;width: 100px;height:100px;border-radius:50px 50px 50px 50px;text-align: center;" ng-click="selectHead()">
         <i class="ion-ios-camera-outline" style="font-size: 40px;color: white;margin-left: -40px" ng-click="selectHead()"></i>
       </div>
     </div>
@@ -16,63 +16,37 @@
 
       <label class="item item-input">
         <span class="input-label">用户名</span>
-        <input type="text" ng-model="stu.username" ng-disabled="true">
+        <input type="text" ng-model="user.username" ng-disabled="true">
 
       </label>
       <div class="item item-input">
-        <span class="input-label">姓名：</span>
-        <input type="text" ng-model="stu.name" ng-disabled="stu.showSwal">
+        <span class="input-label">姓名</span>
+        <input type="text" ng-model="user.name" placeholder="请输入真实姓名,以便购票">
 
       </div>
       <div class="item item-input">
-        <span class="input-label">校区：</span>
-        <input type="text" ng-model="stu.compus" ng-disabled="stu.showSwal">
+        <span class="input-label">证件类型</span>
+        <button type="button" ng-click="selectType()">{{user.cardType}}</button>
 
       </div>
       <div class="item item-input">
-        <span class="input-label">院系：</span>
-        <input type="text" ng-model="stu.xy" ng-disabled="stu.showSwal">
+        <span class="input-label">证件号码</span>
+        <input type="text" ng-model="user.cardId" placeholder="请准确完整填写">
 
       </div>
-      <div class="item item-input" style="font-size: 14px">
-        <span class="input-label">性别</span>
-        <span style="font-size: 25px;text-align: right;top: 14px; ">
-            <i class="ion-woman" ng-click="selectWoman()"></i>
-            <label style="font-size: 14px" ng-if="woman.show">选中女</label>
-            <i class="ion-man" ng-style="man.icon" ng-click="selectMan()"></i>
-            <label style="font-size: 14px;margin-left: 0px" ng-if="man.show">选中男</label>
-        </span>
-      </div>
-      <label class="item item-input">
-        <div class="input-label">生日：</div>
-        <!--应当弄一个日期选择器-->
-        <input type="date"  ng-model="stu.birth"
-               placeholder="请输入开始时间" min="2013-01-01" max="2113-12-31" style="float: right" ng-disabled="showSwal" />
-      </label>
 
       <div class="item item-input">
         <span class="input-label">邮箱：</span>
-        <input type="email" ng-model="stu.email" ng-disabled="stu.showSwal">
+        <input type="email" ng-model="user.email" placeholder="请准确填写邮箱地址">
       </div>
       <div class="item item-input">
         <span class="input-label">电话：</span>
-        <input type="tel" ng-model="stu.tel" ng-disabled="stu.showSwal">
-
-      </div>
-      <div class="item item-input">
-        <span class="input-label">住址：</span>
-        <input type="text" ng-model="stu.address" ng-disabled="stu.showSwal">
-
-      </div>
-      <div class="item item-input">
-        <span class="input-label">邮编：</span>
-        <input type="tel" ng-model="stu.postcode" ng-disabled="stu.showSwal">
+        <input type="tel" ng-model="user.tel">
 
       </div>
       <div class="item item-input">
         <span class="input-label">账号设置：</span>
         <p ng-click="accountSetting()">点击可进行账号设置</p>
-
       </div>
     </div>
 

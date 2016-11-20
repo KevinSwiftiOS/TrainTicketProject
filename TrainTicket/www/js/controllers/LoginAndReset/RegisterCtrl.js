@@ -78,8 +78,7 @@ $scope.register = function () {
       });
   }else{
     //将用户名 密码 手机号进行注册 插入到数据库中
-
-var url = "http://localhost:3000/register";
+    var url = "http://localhost:3000/register";
     var user = $scope.user;
 
     var param = {
@@ -99,13 +98,20 @@ var url = "http://localhost:3000/register";
             width: 100,
           },
           function () {
+            var ls = window.localStorage;
 
+            ls.setItem("username",$scope.user.username);
+            ls.setItem("password",$scope.user.password);
+            ls.setItem("mobile",$scope.user.mobile);
+            ls.setItem("name","");
+            ls.setItem("cardId","");
+            ls.setItem("email","");
+            ls.setItem("cardType","二代身份证");
             $state.go("tab.BookTicket");
-
 
           });
       }else{
-        //注册成功
+
         swal({
             title: "提醒",
             text: "注册失败",

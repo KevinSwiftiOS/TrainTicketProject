@@ -1,89 +1,93 @@
 /**
  * Created by hcnucai on 2016/10/25.
  */
-app.controller('PersonalCtrl', function($scope,$rootScope,$state,$ionicHistory,$ionicActionSheet,$cordovaCamera){
-  $scope.avatar = "http://dodo.hznu.edu.cn/Upload/editor/776de979-dead-4a60-83ca-a6aa00be839a.jpg";
+app.controller('PersonalCtrl', function($scope,$rootScope,$state,$ionicHistory,$ionicActionSheet,$cordovaCamera,httpPost,img){
+var imgData;
+$scope.img = img;
+  //监听
+  $scope.$watch('img', function(newVal, oldVal) {
+    if (newVal !== oldVal) {
 
-  $scope.stu = {
-    username:"2015001001",
-
-    name:"曹凯强",
-    compus:"仓前校区",
-    xy:"软工142",
-    sex:"男",
-    birth:new Date(1995,9,3),
-    email:"154985049804@qq.com",
-    tel:"2015001001",
-    address:"2015001001",
-    postcode:"315502",
-    showSwal:false,
-  };
+    }
+  }, true);
   //监听页面进入的时候 tab消失
   $scope.$on("$ionicView.beforeEnter",function () {
-    $rootScope.hideTabs = true;
+    var ls = window.localStorage;
+    $scope.user = {
+      username:ls.getItem("username"),
+
+      name:ls.getItem("name"),
+      cardType:ls.getItem("cardType"),
+      cardId:ls.getItem("cardId"),
+
+      email:ls.getItem("email"),
+      tel:ls.getItem("mobile"),
+    };
   });
+  //选择证件类别
+  $scope.selectType = function () {
+    //选择身份类别
+    $ionicActionSheet.show({
+      buttons: [
+        {text: '二代身份证'},
+        {text:"港澳通行证"},
+        {text:"台湾通行证"},
+        {text:"护照"}
+      ],
+      cancelText: '取消',
+      buttonClicked: function (index) {
+        //到修改密码的界面
+        switch (index){
+          case 0:
+            $scope.user.cardType = "二代身份证";
+            break;
+          case 1:
+            $scope.user.cardType = "港澳通行证";
+            break;
+          case 2:
+            $scope.user.cardType = "台湾通行证";
+            break;
+          case 3:
+            $scope.user.cardType = "护照";
+            break;
+          default:break;
+
+        }
+      return true;
+      }
+
+    });
+  }
   //进行保存的操作
   $scope.save = function () {
-
     //可以拿到值并且保存成功个人信息
-    swal({
-        title: "恭喜您",
-        text: "保存成功",
-        type: "success",
-        height: 10000,
-        width: 100,
-      },
-      function () {
+    //保存的动作
+        var url = "http://localhost:3000/save";
+   var param = $scope.user;
+      var promise = httpPost.post(url,param);
+        promise.success(function (res) {
+          if (res["success"] == 1) {
+            //设置变量的值
+            var ls = window.localStorage;
+            ls.setItem("name", param.name);
+            ls.setItem("mobile", param.tel);
+            ls.setItem("cardId", param.cardId);
+            ls.setItem("email", param.email);
+            ls.setItem("cardType", param.cardType);
+            $scope.img.src = imgData;
+            swal({
+                title: "恭喜您",
+                text: "保存成功",
+                type: "success",
+                height: 10000,
+                width: 100,
+              },
+              function () {
 
+              });
+          }
+        });
 
-
-
-      });
-  }
-  //性别的使用
-  if($scope.stu.sex == "男") {
-    $scope.woman = {
-      show:false
-    }
-    $scope.man = {
-      icon:{
-        "margin-left":"50px",
-      },
-      show:true
-    }
-  }else{
-    $scope.woman = {
-      show:true
-    }
-    $scope.man = {
-      icon:{
-        "margin-left":"80px",
-      },
-      show:false
-    }
-  }
-  //选择男女性别
-  $scope.selectWoman = function() {
-    $scope.woman = {
-      show:true
-    }
-    $scope.man = {
-      icon:{
-        "margin-left":"80px",
-      },
-      show:false
-    }
-  }
-  $scope.selectMan = function(){
-    $scope.woman = {
-      show:false
-    }
-    $scope.man = {
-      icon:{
-        "margin-left":"50px",
-      },
-      show:true
-    }
   }
   //账号的设置
   $scope.accountSetting = function () {
@@ -157,11 +161,13 @@ app.controller('PersonalCtrl', function($scope,$rootScope,$state,$ionicHistory,$
               $cordovaCamera.getPicture(options).then(function (imageData) {
 
                 var image = document.getElementById('myImage');
-                $scope.avatar = "data:image/jpeg;base64," + imageData;
+                $scope.img.src = "data:image/jpeg;base64," + imageData;
+                imgData = "data:image/jpeg;base64," + imageData;
                 //将base64字符串转化为二进制
-                var binaryData = atob(imageData);
-                console.log(imageData);
-                console.log(binaryData);
+                // var binaryData = atob(imageData);
+                // console.log(imageData);
+                // console.log(binaryData);
+
               }, function (err) {
                 //错误的信息
 
@@ -186,7 +192,8 @@ app.controller('PersonalCtrl', function($scope,$rootScope,$state,$ionicHistory,$
               $cordovaCamera.getPicture(options).then(function (imageData) {
 
                 var image = document.getElementById('myImage');
-                $scope.avatar = "data:image/jpeg;base64," + imageData;
+                $scope.img.src = "data:image/jpeg;base64," + imageData;
+                imgData = "data:image/jpeg;base64," + imageData;
               }, function (err) {
                 // error
               });

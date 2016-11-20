@@ -2,14 +2,14 @@
   <ion-content>
 
     <!--顶部 可以加一张背景图-->
-    <div style="height: 70px;width: 100%;text-align: center;line-height: 70px">
+    <div style="height: 50px;width: 100%;text-align: center;line-height: 50px">
      <p> 用户注册</p>
     </div>
-    <div class="list-inset" style="width:300px;margin-left: auto;margin-right: auto;margin-bottom: 0px">
+    <div class="list" style="width:300px;margin-left: auto;margin-right: auto;margin-bottom: 0px">
       <div class="row">
         <div class="col">
-          <label class="item item-input-inset">
-       <span class="input-label">用户名</span>
+          <label class="item item-input">
+       <span class="input-label" ng-hide="user.username">用户名</span>
        <input type="text" ng-model="user.username" placeholder='字母,数字或"_",6-30位'>
 
      </label>
@@ -17,8 +17,8 @@
         </div>
       <div class="row">
         <div class="col">
-          <label class="item item-input-inset">
-        <span class="input-label">密码</span>
+          <label class="item item-input">
+        <span class="input-label" ng-hide="user.password">密码</span>
         <input type="password" ng-model="user.password" placeholder='不少于6位'>
 
       </label>
@@ -26,8 +26,8 @@
         </div>
       <div class="row">
         <div class="col">
-          <label class="item item-input-inset">
-        <span class="input-label">请再次确认密码</span>
+          <label class="item item-input">
+        <span class="input-label" ng-hide="user.configpassword">请再次确认密码</span>
         <input type="password" ng-model="user.configpassword" placeholder='请再次输入密码'>
 
       </label>
@@ -36,36 +36,30 @@
 
       <div class="row">
         <div class="col">
-          <div class="item item-input-inset item-button-right">
-        <span class="input-label">手机号</span>
-<input type="tel" ng-model="user.mobile" placeholder='请输入手机号'>
-        <button class="button button-positive" style="margin-left: 10px" ng-click="receiveAuthCode()">
-         <font size="2px">获取验证码</font>
+          <div class="item item-input item-button-right">
+        <span class="input-label" ng-hide="user.mobile">手机号</span>
+<input type="tel" ng-model="user.mobile" placeholder='请输入号码'>
+        <button class="button button-positive" style="margin-left: 50px" ng-click="receiveAuthCode()">
+         <font size="0.5px">获取验证码</font>
         </button>
             </div>
           </div>
 </div>
       <div class="row" >
         <div class="col">
-          <label class="item item-input-inset">
-            <div class="row" style="height: 60px">
-              <div class="col-20">
-        <span class="input-label">验证码</span>
-  </div>
-              <div class="col">
-        <input type="tel" ng-model="user.authcode" placeholder='请输入验证码'>
-</div>
-   <div class="col-20">
-     <p>{{authcode}}</p>
-     </div>
-              </div>
-      </label>
-          </div>
-        </div>
+          <div class="item item-input item-button-right">
 
+        <span class="input-label" ng-hide="user.authcode">验证码</span>
+        <input type="tel" ng-model="user.authcode" placeholder='请输入验证码'>
+            <button class="button" style="margin-left: 10px">
+              <font size="2px">{{authcode}}</font>
+            </button>
+              </div>
+          </div>
+</div>
       <div class="row">
         <div class="col">
-          <button class="button button-full button-positive" ng-click="register()">注册</button>
+          <button class="button button-full button-positive" ng-click="register()" style="border-radius: 5px">注册</button>
         </div>
       </div>
 </div>
