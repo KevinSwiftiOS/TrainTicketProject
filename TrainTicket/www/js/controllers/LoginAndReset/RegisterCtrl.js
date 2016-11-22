@@ -99,7 +99,6 @@ $scope.register = function () {
           },
           function () {
             var ls = window.localStorage;
-
             ls.setItem("username",$scope.user.username);
             ls.setItem("password",$scope.user.password);
             ls.setItem("mobile",$scope.user.mobile);

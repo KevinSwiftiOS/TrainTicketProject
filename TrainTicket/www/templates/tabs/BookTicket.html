@@ -1,3 +1,78 @@
 <ion-view title="车票预订">
+<ion-content>
+  <div class="list">
+    <div class="item">
+      <div class="row" style="margin-top: -20px;margin-bottom: -20px">
+        <div class="col-40" style="text-align: center;margin-top: 10px">
+          <p ng-click="selectStart()">{{station.start}}</p>
+        </div>
+        <div class="col" style="text-align: center;">
+             <i class="icon ion-loop" style="font-size: 30px;" id = "icon"></i>
+        </div>
+        <div class="col-40" style="text-align: center;margin-top: 10px">
+          <p ng-click="selectEnd()">{{station.end}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="input-label" style="float: left">出发日期:</span>
+      <!--应当弄一个日期选择器-->
+      <input type="date"
+             placeholder="请输入开始时间" min="2013-01-01" max="2113-12-31" style="float: left" ng-model="user.date"/>
+      <p style="float: right;margin-top: 10px">学生</p>
+      <input type="checkbox" ng-model="user.isStu" style="float: right;margin-top: 15px" ng-change="changed()">
 
+    </div>
+    <div class="item item-input">
+      <span class="input-label">出发时间</span>
+      <p ng-click="selectTime()">{{user.time}}</p>
+    </div>
+    <div class="item item-input">
+      <span class="input-label">席别</span>
+      <p ng-click="selectType()">{{user.type}}</p>
+    </div>
+    <div class="item">
+      <div class="row">
+        <div class="col-20">
+      <p ng-click="all()"><font color="{{all.color}}"> 全部</font></p>
+          </div>
+        <div class="col-20" style="margin-left: -20px">
+          <p  ng-click="GDC()"><font color="{{GDC.color}}">G/D/C</font></p>
+        </div>
+        <div class="col-20">
+          <p  ng-click="Z()"><font color="{{Z.color}}">Z字头</font></p>
+        </div>
+        <div class="col-20">
+          <p  ng-click="T()"><font color="{{T.color}}">T字头</font></p>
+        </div>
+        <div class="col-20">
+          <p  style="float: left;" ng-click="K()"><font color="{{K.color}}"> K字头 </font></p>
+        </div>
+
+        </div>
+        </div>
+    <div class="row">
+      <div class="col">
+        <button class="button button-full button-positive" style="border-radius: 5px" ng-click="query()">查询</button>
+      </div>
+    </div>
+  </div>
+  <div style="float: left;width: 35%;background-color: blue;height: 1px"></div>
+  <div style="float: right;width: 35%;background-color: blue;height: 1px"></div>
+  <div style="text-align: center;margin-top: -10px;">最近常用线路</div>
+  <div class="list">
+    <div class="item" style="height: 30px;">
+      <p style="margin-top: -10px">宁波--杭州东</p>
+    </div>
+    <div class="item" style="height: 30px;">
+      <p style="margin-top: -10px">宁波--杭州东</p>
+    </div>
+    <div class="item" style="height: 30px;">
+      <p style="margin-top: -10px">宁波--杭州东</p>
+    </div>
+    <div class="item" style="height: 30px;">
+      <p style="margin-top: -10px">宁波--杭州东</p>
+    </div>
+  </div>
+</ion-content>
 </ion-view>

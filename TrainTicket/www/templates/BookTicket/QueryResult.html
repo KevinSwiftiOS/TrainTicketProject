@@ -1,0 +1,38 @@
+<ion-view title="查询结果">
+  <ion-content>
+<div class="list">
+  <div class="item" style="text-align: center">
+  <i class="ion-chevron-left" style="float: left;margin-left: 5px;font-size: 20px;"></i>
+  <i class="ion-chevron-right" style="float: right; margin-right: 5px;font-size: 20px;"></i>
+  <p ><font size="5px"> {{date}}</font></p>
+  </div>
+</div>
+    <div class="list">
+      <div class="item" ng-repeat="item in items" ng-click="buy($index)">
+<div class="row">
+  <div class="col">
+    <p style="float: left;">{{item.train}}</p>
+    <p style="float: right">{{item.price}}</p>
+    <p><i class="ion-clock"> {{item.dur}}</i></p>
+  </div>
+</div>
+        <div class="row">
+          <div class="col">
+            <p style="float: left;">{{item.startTime}}</p>
+            <p style="float: right">{{item.seatType}}</p>
+            <p>{{item.startStaion}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p style="float: left;">{{item.endTime}}</p>
+            <p style="float: right">{{item.number}}</p>
+            <p>{{item.endStation}}</p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  </ion-content>
+</ion-view>

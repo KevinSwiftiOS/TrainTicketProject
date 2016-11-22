@@ -1,1 +1,4 @@
 /* Empty. Add your own CSS if you like */
+input[type="button"], input[type="date"], input[type="datetime-local"] {
+  -webkit-appearance: none;
+}

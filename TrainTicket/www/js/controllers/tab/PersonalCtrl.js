@@ -87,7 +87,6 @@ $scope.img = img;
               });
           }
         });
-
   }
   //账号的设置
   $scope.accountSetting = function () {

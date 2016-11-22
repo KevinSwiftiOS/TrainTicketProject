@@ -130,16 +130,78 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
 //第二个模块 订单列表的详细页面
     .state('tab.Order-OrderDetail',{
-      url:'/Order/OrderDetail',
+    url:'/Order/OrderDetail',
 
+    views:{
+      'menuContent': {
+        templateUrl: 'templates/Order/OrderDetail.html',
+        controller: 'OrderDetailCtrl',
+      }
+    }
+
+  })
+    //第一个模块 查询开始和结束车站
+    .state('tab.BookTicket-Search',{
+      url:'/BookTicket/Search',
+      params:{type:null},
       views:{
         'menuContent': {
-          templateUrl: 'templates/Order/OrderDetail.html',
-          controller: 'OrderDetailCtrl',
+          templateUrl: 'templates/BookTicket/SearchStation.html',
+          controller: 'SearchStationCtrl',
         }
       }
 
     })
+    //第一个模块 查询结果
+    .state('tab.BookTicket-Result',{
+      url:'/BookTicket/Result',
+      params:{date:null,time:null,type:null},
+      views:{
+        'menuContent': {
+          templateUrl: 'templates/BookTicket/QueryResult.html',
+          controller: 'QueryResultCtrl',
+        }
+      }
+
+    })
+    //第一个模块 完善个人信息
+    .state('tab.BookTicket-CompleteInfo',{
+      url:'/BookTicket/CompleteInfo',
+
+      views:{
+        'menuContent': {
+          templateUrl: 'templates/BookTicket/CompleteInfo.html',
+          controller: 'CompleteInfoCtrl',
+        }
+      }
+
+    })
+    //第一个模块 确认订单
+    .state('tab.BookTicket-ConfirmOrder',{
+      url:'/BookTicket/ConfirmOrder',
+
+      views:{
+        'menuContent': {
+          templateUrl: 'templates/BookTicket/ConfirmOrder.html',
+          controller: 'ConfirmOrderCtrl',
+        }
+      }
+
+    })
+    //第一个模块 添加联系人
+    .state('tab.BookTicket-AddPerson',{
+      url:'/BookTicket/AddPerson',
+
+      views:{
+        'menuContent': {
+          templateUrl: 'templates/BookTicket/AddPerson.html',
+          controller: 'AddPersonCtrl',
+        }
+      }
+
+    })
+
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/BookTicket');
 

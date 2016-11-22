@@ -14,7 +14,20 @@ service.factory('httpPost',function ($http) {
 });
 //头像的路径
 service.factory("img",function () {
-return {
-  src:null
-}
+  return {
+    src: null
+  }
+});
+//起始站点的选择
+  service.factory("station",function () {
+    return {
+      start:"杭州东",
+      end:"宁波",
+    }
+  });
+//买的票
+service.factory("trainTicket",function () {
+  return {
+    detail:null
+  }
 })

@@ -1,0 +1,56 @@
+<ion-view title="完善信息">
+  <ion-content>
+  <div class="list" style="width:300px;margin-left: auto;margin-right: auto;margin-bottom: 0px">
+    <div class="row">
+      <div class="col">
+        <label class="item item-input">
+          <span class="input-label">姓名</span>
+          <input type="text" ng-model="user.name" placeholder="请填写正确的名字">
+
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label class="item item-input">
+          <span class="input-label">证件号码</span>
+          <input type="tel" ng-model="user.cardId" placeholder="请准确完整填写">
+
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label class="item item-input">
+          <span class="input-label">邮箱</span>
+          <input type="text" ng-model="user.email" placeholder="请准确完整填写">
+
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label class="item item-input">
+          <span class="input-label">电话</span>
+          <input type="tel" ng-model="user.tel" placeholder="请准确完整填写">
+
+        </label>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p style="float: left;margin-top: 10px">证件类型</p>
+            <button class="button  button-positive" style="border: 10px;float: right;width: 200px" ng-click="selectType()">{{user.cardType}}</button>
+            </div>
+            </div>
+    <!--完成按钮-->
+    <div class="row">
+      <div class="col">
+        <button class="button button-full button-positive" ng-click="complete()" style="border-radius: 5px">完成</button>
+      </div>
+    </div>
+    </div>
+
+
+  </ion-content>
+</ion-view>

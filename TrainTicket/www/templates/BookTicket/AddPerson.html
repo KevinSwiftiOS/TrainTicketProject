@@ -1,0 +1,26 @@
+<ion-view title="添加联系人">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="finishAddPerson()">完成</button>
+
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="item-input">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="text" placeholder="搜索" ng-model="user.search">
+
+      </label>
+      <button class="button button-outline" ng-click="removeSearch()">
+        <font color="blue">取消</font>
+      </button>
+    </div>
+    <div class="list">
+      <div class="item" ng-repeat="item in items | filter:user.search">
+        <input type="checkbox"  style="float: left;margin-top: 5px">
+        <p style="float: left;margin-left: 5px">{{item.name}}</p>
+        <p style="float: right;">{{item.cardId}}</p>
+        <p style="float: right;margin-right: 20px">{{item.type}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

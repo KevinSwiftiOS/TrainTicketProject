@@ -1,0 +1,48 @@
+<ion-view title="提交订单">
+  <ion-content>
+    <div class="list list-inset" style="margin-top: 20px;border-radius: 5px">
+      <div class="item" style="background-color:dodgerblue">
+        <p style="float: left"><font color="white"> {{detail.train}}</font></p>
+        <p style="float: right"><font color="white">{{detail.date}}</font></p>
+      </div>
+      <div class="item">
+      <p style="float: left"><font size="5px">{{detail.startStaion}}</font></p>
+        <p style="float: right"><font size="5px">{{detail.endStation}}</font></p>
+        <div style="text-align: center">
+        <i class="icon ion-chevron-right" style="font-size: 30px"></i>
+        </div>
+      </div>
+      <div class="item">
+        <p style="float: left"><font size="5px">{{detail.startTime}}</font></p>
+        <p style="float: right"><font size="5px">{{detail.endTime}}</font></p>
+      </div>
+     <div class="item item-icon-right" style="margin-top: 20px" ng-click="addPerson()">
+       <span>添加/修改乘车人</span>
+       <i class="icon ion-person-add"></i>
+     </div>
+    <div class="item item-button-right">
+     <span>请点击图中所有的榨汁机</span>
+      <button class="button button-outline button-positive">刷新</button>
+    </div>
+<div class="item">
+
+  <img src = "img/adam.jpg" style="float: left;height: 50px;width: 25%;" ng-click="selectImg1()">
+  <img src = "img/adam.jpg" style="float: left;height: 50px;width: 25%" ng-click="selectImg1()">
+  <img src = "img/adam.jpg" style="float: left;height: 50px;width: 25%" ng-click="selectImg1()">
+  <img src = "img/adam.jpg" style="float: left;height: 50px;width: 25%" ng-click="selectImg1()">
+  <img src = "img/adam.jpg" style="float: left;height: 50px;width: 25%" ng-click="selectImg1()">
+  <img src = "img/adam.jpg" style="float: left;height: 50px;width: 25%" ng-click="selectImg1()">
+  <img src = "img/adam.jpg" style="float: left;height: 50px;width: 25%" ng-click="selectImg1()">
+  <img src = "img/adam.jpg" style="float: left;height: 50px;width: 25%" ng-click="selectImg1()">
+
+</div>
+      <div class="row">
+        <div class="col">
+          <button class="button button-full button-positive" ng-click="finish()" style="border-radius: 5px">立即预订</button>
+        </div>
+      </div>
+      </div>
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view title="车站选择">
+  <ion-content>
+  <div class="item-input">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="text" placeholder="搜索" ng-model="user.search">
+
+    </label>
+    <button class="button button-outline" ng-click="removeSearch()">
+      <font color="blue">取消</font>
+    </button>
+  </div>
+    <div class="list">
+      <div class="item" ng-repeat="item in items | filter:user.search" ng-click="endSearch(item.station)">
+        {{item.station}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
