@@ -1,0 +1,96 @@
+<ion-view title="网上支付">
+  <ion-nav-buttons side="secondary">
+    <!--增加新的个人信息-->
+    <button class="button" ng-click="cancel()">
+    取消订单
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list">
+      <div class="item" style="background-color: #a6e22d">
+        席位已经成功锁定,请在{{h}}:{{m}}分钟内完成网上支付,否则系统将自动取消本次交易,
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col">
+            <p style="float: left">取票号:E061784581</p>
+            <P style="float: right">{{detail.date}}</P>
+          </div>
+        </div>
+        <div class="row">
+
+            <div class="col-40" style="text-align: left;margin-top: 10px">
+              <p ng-click="selectStart()">{{detail.startStaion}}</p>
+            </div>
+            <div class="col" style="text-align: center;">
+              <i class="icon ion-chevron-right" style="font-size: 30px;" id = "icon"></i>
+            </div>
+            <div class="col-40" style="text-align: right;margin-top: 10px">
+              <p ng-click="selectEnd()">{{detail.endStation}}</p>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col" style="text-align: center">
+            <p style="float: left">{{detail.startTime}}</p>
+            <p style="float: right">{{detail.endTime}}</p>
+            <p>{{detail.train}}</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <div class="col">
+            <p style="float: left">{{person.name}}</p>
+            <p style="float:right;">02车厢01A号</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p style="float:left;">{{person.cardId}}</p>
+            <p style="float:right;">{{detail.seatType}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p style="float:left;">成人票</p>
+            <p style="float:right;">{{detail.price}}元</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+ <div class="list" style="margin-top: 25%">
+   <div class="item item-toggle">
+     <p>意外险 5元/人可获高额意外险</p>
+     <label class="toggle toggle-positive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+   </div>
+   <div class="item item-toggle">
+     <p>退票险 1.8元最高赔手续费80%</p>
+     <label class="toggle toggle-positive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+   </div>
+ </div>
+
+  </ion-content>
+  <ion-footer-bar>
+    <div class="list" style="width: 100%">
+      <div class="item item-button-right">
+        <p style="float: left">订单金额</p>
+        <p style="float: left;margin-left: 10px"><font color="aqua">{{detail.price}}.00</font> </p>
+        <button class="button button-positive button-outline">立即支付</button>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

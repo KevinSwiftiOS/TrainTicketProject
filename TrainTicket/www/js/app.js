@@ -200,7 +200,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
 
     })
+    //第一个模块 提交订单
+    .state('tab.BookTicket-SubmitOrder',{
+      url:'/BookTicket/SubmitOrder',
 
+      views:{
+        'menuContent': {
+          templateUrl: 'templates/BookTicket/SubmitOrder.html',
+          controller: 'SubmitOrderCtrl',
+        }
+      }
+
+    })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/BookTicket');

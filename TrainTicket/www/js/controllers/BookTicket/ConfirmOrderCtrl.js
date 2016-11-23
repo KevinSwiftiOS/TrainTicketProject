@@ -13,6 +13,6 @@ $scope.detail = trainTicket.detail;
   }
   //订单完成界面
   $scope.finish  = function () {
-
+    $state.go("tab.BookTicket-SubmitOrder");
   }
 })
