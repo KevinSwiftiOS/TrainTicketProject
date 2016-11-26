@@ -6,63 +6,65 @@
     </button>
   </ion-nav-buttons>
   <ion-content>
-    <div class="list">
-      <div class="item" style="background-color: #a6e22d">
-        席位已经成功锁定,请在{{h}}:{{m}}分钟内完成网上支付,否则系统将自动取消本次交易,
+
+      <div  style="background-color: yellow;text-align: left;word-wrap: break-word;">
+     <p style="margin-left: 3px;margin-right: 3px">  <font size="3px">席位已经成功锁定,请在
+         <font color="red">{{h}}:{{m}}</font> 分钟内完成网上支付,否则系统将自动取消本次交易,</font></p>
       </div>
+      <div class="list">
       <div class="item">
-        <div class="row">
+        <div class="row" style="background-color: #3c80f6">
           <div class="col">
-            <p style="float: left">取票号:E061784581</p>
-            <P style="float: right">{{detail.date}}</P>
+            <p style="float: left"><font color="white"> 取票号:E061784581</font></p>
+            <p style="float: right"><font color="white"> {{detail.date}}</font></p>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="background-color: #3c80f6">
 
             <div class="col-40" style="text-align: left;margin-top: 10px">
-              <p ng-click="selectStart()">{{detail.startStaion}}</p>
+              <p ng-click="selectStart()"><font color="white" size="5px">{{detail.startStaion}}</font></p>
             </div>
             <div class="col" style="text-align: center;">
-              <i class="icon ion-chevron-right" style="font-size: 30px;" id = "icon"></i>
+              <font color="white"><i class="icon ion-chevron-right" style="font-size: 30px;" id = "icon"></i></font>
             </div>
             <div class="col-40" style="text-align: right;margin-top: 10px">
-              <p ng-click="selectEnd()">{{detail.endStation}}</p>
+              <p ng-click="selectEnd()"><font color="white" size="5px">{{detail.endStation}}</font></p>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="background-color: #3c80f6">
           <div class="col" style="text-align: center">
-            <p style="float: left">{{detail.startTime}}</p>
-            <p style="float: right">{{detail.endTime}}</p>
-            <p>{{detail.train}}</p>
+            <p style="float: left"><font color="white"  size="3px">{{detail.startTime}}</font></p>
+            <p style="float: right"><font color="white"  size="3px">{{detail.endTime}}</font></p>
+            <p><font color="white">{{detail.train}}</font> </p>
           </div>
         </div>
 
       </div>
 
-      <div class="item">
-        <div class="row">
+      <div class="item" style="margin-top: -20px">
+        <div class="row" style="margin-top: -20px">
           <div class="col">
-            <p style="float: left">{{person.name}}</p>
-            <p style="float:right;">02车厢01A号</p>
+            <p style="float: left"><font color="black"> {{person.name}}</font></p>
+            <p style="float:right;"><font color="black"> 02车厢01A号</font></p>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-top: -15px">
           <div class="col">
-            <p style="float:left;">{{person.cardId}}</p>
-            <p style="float:right;">{{detail.seatType}}</p>
+            <p style="float:left;"><font color="black"> {{person.cardId}}</font></p>
+            <p style="float:right;"><font color="black"> {{detail.seatType}}</font></p>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-top: -15px">
           <div class="col">
-            <p style="float:left;">成人票</p>
-            <p style="float:right;">{{detail.price}}元</p>
+            <p style="float:left;"><font color="#d3d3d3">成人票</font></p>
+            <p style="float:right;"><font color="black"> {{detail.price}}元</font></p>
           </div>
         </div>
       </div>
 
     </div>
 
- <div class="list" style="margin-top: 25%">
+ <div class="list" style="margin-top: 30%">
    <div class="item item-toggle">
      <p>意外险 5元/人可获高额意外险</p>
      <label class="toggle toggle-positive">
@@ -85,11 +87,11 @@
 
   </ion-content>
   <ion-footer-bar>
-    <div class="list" style="width: 100%">
-      <div class="item item-button-right">
-        <p style="float: left">订单金额</p>
+    <div class="list" style="width: 100%;background-color: black">
+      <div class="item item-button-right" style="background-color: black">
+        <p style="float: left"><font color="white"> 订单金额</font></p>
         <p style="float: left;margin-left: 10px"><font color="aqua">{{detail.price}}.00</font> </p>
-        <button class="button button-positive button-outline">立即支付</button>
+        <button class="button button-energized"><font color="white"> 立即支付</font></button>
       </div>
     </div>
   </ion-footer-bar>

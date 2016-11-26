@@ -1,3 +1,3 @@
-var app = angular.module('starter.controllers', ['ngCordova']);
+var app = angular.module('starter.controllers', ['ngCordova','base64']);
 
 

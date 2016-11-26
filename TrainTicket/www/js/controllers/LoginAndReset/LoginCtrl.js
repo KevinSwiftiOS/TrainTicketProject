@@ -1,7 +1,7 @@
 /**
  * Created by hcnucai on 2016/10/23.
  */
-app.controller('LoginCtrl',function ($scope,$state,httpPost,img) {
+app.controller('LoginCtrl',function ($scope,$state,httpPost,img,$base64) {
 
 
     $scope.login = function () {
@@ -14,6 +14,7 @@ app.controller('LoginCtrl',function ($scope,$state,httpPost,img) {
         username:username,
         password:password
       };
+
       var promise = httpPost.post(url,param);
       promise.success(function (res) {
         if(res["success"] == 0){
